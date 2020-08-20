@@ -1,0 +1,18 @@
+{
+  "navbar":{
+    "about-us": "About Us",
+    "info": "Server Information",
+    "vote-sites": "Ballot stations"
+  },
+  "landingpage":{
+    "jumbotron":{
+      "h1": "Free roam of hardcore survival.",
+      "srvaddr": "Server Address: "
+    }
+  },
+  "i18n":{
+    "selector":{
+      "label": "Language 🌐"
+    }
+  }
+}

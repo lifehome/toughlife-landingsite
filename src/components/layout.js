@@ -7,39 +7,26 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Navbar from "./header"
+
+// Bootstrap imports
+import "bootstrap/dist/css/bootstrap.min.css" // Core import
+import { Container } from "react-bootstrap"
+
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <Navbar />
+      <main>
+          <Container fluid>{children}</Container>
+      </main>
+      <footer className="align-middle">
+        CC-BY-SA 4.0 // Built with <span role="img" alt="love">♥️</span> by <a href="https://toughlife.info">Toughlife</a>
+      </footer>
     </>
   )
 }
